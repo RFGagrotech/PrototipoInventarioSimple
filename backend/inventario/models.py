@@ -2,7 +2,7 @@ from django.db import models
 from django.core.validators import MinValueValidator
 
 class Producto(models.Model):
-    codigo = models.PositiveIntegerField(default=1,validators=[MinValueValidator(1)])
+    codigo = models.PositiveIntegerField(default=1,validators=[MinValueValidator(1)], unique=True)
     nombre = models.CharField(max_length=100)
     categoria = models.CharField(max_length=50)
     cantidad = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
